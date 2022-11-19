@@ -1,34 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <div className="card-header">
+          <img src="" />
+        </div>
+        <div className="card-body">
+          <div className="contact">
+            <h1>Eduard Schwarzkopf</h1>
+            <h3>Dude</h3>
+
+            <p>example.com</p>
+          </div>
+
+          <div className="button-wrapper">
+            <button className="Email">Email</button>
+            <button className="LinkedIn">LinkedIn</button>
+          </div>
+
+          <h2>About</h2>
+          <p>Something something</p>
+
+          <h2>About</h2>
+          <p>Something something</p>
+        </div>
+        <div className="card-footer">
+          <div className="button-wrapper">
+            <button className="footer-btn">Twitter</button>
+            <button className="footer-btn">Github</button>
+          </div>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
