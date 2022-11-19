@@ -1,36 +1,67 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import profileImage from "./assets/profileImage.png";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faSquareGithub,
+  faSquareTwitter,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faSquareGithub, faSquareTwitter, faLinkedin, faEnvelope);
+
 import "./App.css";
+import CardTextSection from "./components/CardTextSection";
+import CardContact from "./components/CardContact";
 
 function App() {
   return (
     <div className="App">
       <div className="card">
         <div className="card-header">
-          <img src="" />
+          <img src={profileImage} />
         </div>
         <div className="card-body">
-          <div className="contact">
-            <h1>Eduard Schwarzkopf</h1>
-            <h3>Dude</h3>
-
-            <p>example.com</p>
-          </div>
+          <CardContact
+            name="John Doe"
+            role="Developer"
+            homepage="example.com"
+          />
 
           <div className="button-wrapper">
-            <button className="Email">Email</button>
-            <button className="LinkedIn">LinkedIn</button>
+            <a href="#">
+              <button className="btn-email">
+                <FontAwesomeIcon icon="envelope" />
+                Email
+              </button>
+            </a>
+            <a href="#">
+              <button className="btn-linkedin">
+                <FontAwesomeIcon icon={["fab", "linkedin"]} />
+                LinkedIn
+              </button>
+            </a>
           </div>
 
-          <h2>About</h2>
-          <p>Something something</p>
+          <CardTextSection title="About">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, conse
+          </CardTextSection>
 
-          <h2>About</h2>
-          <p>Something something</p>
+          <CardTextSection title="Interests">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+          </CardTextSection>
         </div>
+
         <div className="card-footer">
-          <div className="button-wrapper">
-            <button className="footer-btn">Twitter</button>
-            <button className="footer-btn">Github</button>
-          </div>
+          <a href="#">
+            <FontAwesomeIcon icon={["fab", "square-github"]} />
+          </a>
+          <a href="#">
+            <FontAwesomeIcon icon={["fab", "square-twitter"]} />
+          </a>
         </div>
       </div>
     </div>
